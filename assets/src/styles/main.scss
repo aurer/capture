@@ -1,0 +1,150 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+*{
+  box-sizing: border-box;
+}
+body{
+    font-family: "Lato", sans-serif;
+}
+h1, h2{
+	color: #EC3701;	
+	text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+	text-align: center;
+	font-weight: lighter;
+}
+h1{
+  margin: 0;
+  font-size: 3em;
+}
+h2{
+	margin: 0 0 1em;
+	font-style: italic;
+}
+section{
+  overflow: hidden;
+}
+.row{
+	padding: 1em;
+}
+.options{
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #213746;
+  color: #ccc;
+  background-image: linear-gradient(top, #213746 0%, #182833 100%);
+}
+.output{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 300px;
+  bottom: 0;
+  overflow: auto;
+  background: #354B5B;
+  background-image: linear-gradient(top, #567286 0%, #354B5B 100%);
+  text-align: center;
+}
+
+.screenshot{
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  margin: 0 2em 2em 0;
+  vertical-align: top;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow: auto;
+
+  &.loading{
+  	background: url(/assets/dist/gfx/loading.svg) no-repeat center;
+  }
+  img{
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.description{
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	margin-top: 2em;
+}
+
+form{
+	input[type=text],
+	input[type=number]{
+		padding: .7em;
+		width: 100%;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 4px;
+		background: #15242D;
+		color: #eee;
+	}
+	label{
+		color: #ccc;
+	}
+	.field{
+		margin: 0 0 1.5em;
+		transition: all .3s;
+	}
+
+	button{
+		float: right;
+	}
+	
+	.field.inactive{
+  		opacity: 0;
+  		transform: scale(0);
+  		height: 0;
+  		margin: 0;
+  	}
+	.field.opt-custom input{
+		width: 48%;
+		margin: 0;
+	}
+
+	.gen-options {
+		overflow: hidden;
+		.btn{
+			width: 50%;
+			margin: 0;
+			float: left;
+
+			&:first-child{
+				border-radius: 4px 0 0 4px;
+			}
+			&:last-child{
+				border-radius: 0 4px 4px 0;
+				border-left: none;
+			}
+		}
+	}
+
+	.field.opt-custom input:last-child{
+		margin-left: 2%;
+	}
+}
+
+.btn{
+	padding: .6em 1.8em;
+	font-size: .9em;
+	display: inline-block;
+	text-decoration: none;
+	text-align: center;
+	line-height: 1.1;
+	margin: 0 .2em;
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	color: #ccc;
+	background: rgba(255, 255, 255, 0.07);
+	transition: background .2s;
+}
+.btn:hover,
+.btn:focus{
+	color: #fff;
+	cursor: pointer;
+	background: rgba(255, 255, 255, 0.2);
+	outline: none;
+}
+.btn.active{
+	background: rgba(255, 255, 255, 0.3);
+}
