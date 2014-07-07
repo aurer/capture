@@ -18,10 +18,14 @@ page.viewportSize = { height:height, width:width };
 page.open(url);
 page.onLoadFinished = function(status){
 	if (status === 'success') {
-		page.render(filepath, {format: format, quality: quality});
+		setTimeout(function(){
+			page.render(filepath, {format: format, quality: quality});
+			page.release();
+			phantom.exit();
+		}, 500);
 	} else {
 		console.log('Unable to access the network!');
+		page.release();
+		phantom.exit();
 	}
-	page.release();
-	phantom.exit();
 }
