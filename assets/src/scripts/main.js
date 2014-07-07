@@ -12,16 +12,18 @@ $(function(){
 
 	$('form.shot').submit(function(e){
 		e.preventDefault();
+		clearAllErrors();
+		var form = $(this);
 		var option = $('a[data-opt=custom]').hasClass('active') ? 'custom' : 'set';
 
 		if (this.url.value == '') {
-			alert('Please enter a URL');
+			addFieldError('input[name=url]', 'Please enter a valid URL');
 			this.url.focus();
 			return;
 		};
 
 		if(option == 'set'){
-			var formdata = $(this).serialize();
+			var formdata = form.serialize();
 			var sizes = ['320x600', '500x500', '700x520', '1280x800', '1400x1200'];
 
 			var sizes = [
@@ -53,7 +55,10 @@ $(function(){
 						}
 					})
 					.error(function(){
-						$(this).parent().removeClass('loading');
+						var imageContainer = $(this);
+						imageContainer.parent().removeClass('loading').addClass('failed');
+						imageContainer.parent().html('<p>There was a problem generating your screenshot.<br> Please make sure you entered a valid URL.</p>');
+						imageContainer.remove();
 					});
 				counter++;
 			}
@@ -61,7 +66,7 @@ $(function(){
 		} else {
 
 			if (this.width.value == '' || this.height.value == '') {
-				alert('Please specify a width and height');
+				addFieldError('input[name=width]', 'Please specify a width and height');
 				this.width.focus();
 				return;
 			};
@@ -84,3 +89,24 @@ $(function(){
 		}
 	});
 });
+
+function addFieldError(selector, error){
+	var field = $(selector);
+	var container = field.parent();
+	var err_ele = container.find('.error');
+	var error_message = $('<span>', {class: 'error', text: error});
+
+	if(err_ele.length){
+		err_ele.text(error);
+	} else {
+		container.append(error_message);
+	}
+}
+
+function removeFieldError(selector){
+	$(selector).parent().find('.error').remove();
+}
+
+function clearAllErrors(){
+	$('.field .error').remove();
+}

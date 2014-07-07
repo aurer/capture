@@ -62,6 +62,18 @@ section{
     display: block;
     max-width: 100%;
   }
+
+  &.failed{
+  	display: table;
+  	margin: auto;
+  }
+  p{
+  	display: table-cell;
+  	vertical-align: middle;
+  	color: #fff;
+  	background: rgba(0, 0, 0, .4);
+  	margin: 1em;
+  }
 }
 
 .description{
@@ -122,6 +134,10 @@ form{
 	.field.opt-custom input:last-child{
 		margin-left: 2%;
 	}
+
+	.error{
+		color: red;
+	}
 }
 
 .btn{
@@ -146,5 +162,6 @@ form{
 	outline: none;
 }
 .btn.active{
-	background: rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.4);
+	color: #000
 }

@@ -54,9 +54,9 @@ if( $url ){
 		header("Content-type: image/png");
 		echo file_get_contents($file);
 	} else {
-		die("Couldn't render file");
+		header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
 	}
 	
 } else {
-	die("Please enter a valid URL");
+	header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
 }

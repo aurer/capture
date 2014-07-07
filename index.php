@@ -32,17 +32,15 @@
 			<div class="description">
 				<p>A simple screenshot service.</p>
 				<ol>
-					<li>Specify a valid URL</li>
-					<li>Choose either a set of predetermined screen sizes or specify a size</li>
-					<li>Press render to get the screenshot</li>
+					<li>Specify a valid URL.</li>
+					<li>Choose either a set of predetermined screen sizes or specify a size.</li>
+					<li>Press render to get your screenshots.</li>
 				</ol>
 			</div>
 		</div>
 	</section>
 	<section class="output">
-		<div class="row">
-			<!-- images generated here -->
-		</div>
+		<div class="row"></div>
 	</section>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="/assets/dist/js/build.js"></script>
