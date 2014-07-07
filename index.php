@@ -33,7 +33,7 @@
 				<p>A simple screenshot service.</p>
 				<ol>
 					<li>Specify a valid URL</li>
-					<li>Choose either a set of predetermined screen sizes or specofy a size</li>
+					<li>Choose either a set of predetermined screen sizes or specify a size</li>
 					<li>Press render to get the screenshot</li>
 				</ol>
 			</div>
