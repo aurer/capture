@@ -53,8 +53,10 @@ if( $url ){
 	if( is_file($file) ){
 		header("Content-type: image/png");
 		echo file_get_contents($file);
+	} else {
+		die("Couldn't render file");
 	}
 	
 } else {
-	echo "Please enter a valid URL";
+	die("Please enter a valid URL");
 }
