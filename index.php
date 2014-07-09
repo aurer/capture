@@ -13,7 +13,7 @@
 			<h2>beta</h2>
 			<form class="shot">
 				<div class="field">
-					<input type="text" id="in-url" name="url" placeholder="URL">
+					<input type="url" id="in-url" name="url" placeholder="Example: www.mywebsite.com">
 				</div>
 				<div class="field gen-options">
 					<a href="javascript:;" data-opt="set" class="btn active">Set sizes</a>
