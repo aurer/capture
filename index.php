@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Screenshot</title>
+	<title>Capture</title>
 	<link rel="stylesheet" href="/assets/dist/css/screen.css">
 </head>
 <body>
