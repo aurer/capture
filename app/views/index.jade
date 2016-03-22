@@ -1,0 +1,46 @@
+extends layout/default
+
+block content
+  .Section.Section--options
+    .Section-inner
+      h1 Capture
+      h2 beta
+      =message
+      form.Form--capture(action='/render')
+        .Grid.Grid--spaced
+          .Grid-cell
+            .Form-field
+              label URL
+              .Form-inputs
+                input#in-url(type='text', name='url', placeholder='e.g. google.com', value=req.query.url)
+
+          .Grid-cell.u-size1of2
+            .Form-field.opt-custom
+              label Width
+              .Form-inputs
+                input(type='number', name='width', placeholder='Width', value="800")
+
+          .Grid-cell.u-size1of2
+            .Form-field.opt-custom
+              label Height
+              .Form-inputs
+                input(type='number', name='height', placeholder='Height', value="800")
+
+          .Grid-cell
+            .Form-field
+              .Form-inputs
+                input#in-refresh(type='checkbox', name='refresh', value='true')
+                label(for='in-refresh') Force Refresh
+          .Grid-cell
+            .Form-field
+              .Form-inputs
+                button.Button(type='submit') Render
+
+      .Description
+        ol
+          li Specify a valid URL.
+          li Specify a screen size.
+          li Press render to render a screenshot.
+
+  .Section.Section--output
+    .Section-inner

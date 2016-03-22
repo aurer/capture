@@ -1,0 +1,87 @@
+// Set vertical rhythm
+h1, h2, h3, h4, h5, h6, hgroup
+blockquote, p, address,
+table, fieldset, figure, pre {
+  margin-top: 0;
+  margin-bottom: @space;
+}
+
+// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+// Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+b,
+strong {
+  font-weight: bold;
+}
+
+// Address styling not present in Safari and Chrome.
+dfn {
+  font-style: italic;
+}
+
+h1, h2, h3, h4 {
+  font-weight: lighter;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+h2{
+  margin: 0 0 1em;
+  font-style: italic;
+}
+
+// Address styling not present in IE 8/9.
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+// Address inconsistent and variable font size in all browsers.
+small {
+  font-size: 80%;
+}
+
+// Prevent `sub` and `sup` affecting `line-height` in all browsers.
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// Address differences between Firefox and other browsers.
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+// Contain overflow in all browsers.
+pre {
+  overflow: auto;
+  tab-size: 2;
+}
+
+// Address odd `em`-unit font size rendering in all browsers.
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}

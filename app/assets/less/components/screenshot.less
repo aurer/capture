@@ -1,0 +1,25 @@
+.Screenshot {
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  margin: 0 2em 2em 0;
+  vertical-align: top;
+  background-color: @color-primary-light;
+  overflow: auto;
+  width: 200px;
+  height: 200px;
+  transition-duration: .4s;
+
+	&.is-loading {
+		background: @color-primary-light url(/images/loading.svg) no-repeat center;
+	}
+
+	&-caption {
+		display: none;
+	}
+
+	&-image {
+		display: block;
+    max-width: 100%;
+    height: auto;
+	}
+}
