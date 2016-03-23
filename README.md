@@ -11,7 +11,13 @@ A very simple screenshot service.
 
 ## Docker
 
-To run this container use the following commands
+**Dev mode**
+
+1. docker build -t aurer/capture .
+2. docker run -it --rm -p 3000:3000 -v $(pwd)/app:/srv aurer/capture
+3. npm run start-dev
+
+**Production mode**
 
 1. docker build -t aurer/capture .
 2. docker run -d -p 3000:3000 --name capture aurer/capture npm start
