@@ -1,4 +1,6 @@
-module.exports = function ($) {
+module.exports = function($) {
+	var jqueryValidation = require('jquery-validation');
+
 	var module = {
 		init: function() {
 			module.handleFormSubmit();
@@ -9,10 +11,7 @@ module.exports = function ($) {
 			var output = $('.Section--output .Section-inner');
 
 			captureForm.on('submit', function(e){
-				if (!module.validateForm()) {
-					e.preventDefault();
-					return;
-				}
+				captureForm.validate();
 				var $this = $(this);
 				var page = this.url.value;
 				var width = this.width.value;
@@ -22,33 +21,6 @@ module.exports = function ($) {
 				module.renderScreenshot(output, url, page, width, height);
 				e.preventDefault();
 			});
-		},
-
-		validateForm: function() {
-			var captureForm = $('.Form--capture');
-			var page = captureForm[0].url;
-			var width = captureForm[0].width;
-			var height = captureForm[0].height;
-
-			if (page.value == '') {
-				alert('Please enter a valid URL');
-				page.focus();
-				return false;
-			}
-
-			if (width.value < 200) {
-				alert('Please enter a width greater than 200');
-				width.focus();
-				return false;
-			}
-
-			if (height.value < 200) {
-				alert('Please enter a height greater than 200');
-				height.focus();
-				return false;
-			}
-
-			return true;
 		},
 
 		renderScreenshot: function(container, src, caption, width, height) {

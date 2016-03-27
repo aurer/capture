@@ -22,6 +22,15 @@
 	}
 }
 
+.Form--inline {
+	.Form-field {
+		@media @mq-md {
+			display: inline-block;
+			margin-right: @space-sm;
+		}
+	}
+}
+
 .Form-field {
 	margin-top: @space-sm;
 
@@ -37,15 +46,6 @@
 
 	> label {
 		font-weight: bold;
-	}
-}
-
-.Form--inline {
-	.Form-field {
-		@media @mq-md {
-			display: inline-block;
-			margin-right: @space-sm;
-		}
 	}
 }
 

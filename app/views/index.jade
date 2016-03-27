@@ -5,26 +5,28 @@ block content
     .Section-inner
       h1 Capture
       h2 beta
-      =message
-      form.Form--capture(action='/render')
+      if message
+        span.Message.Message--error=message
+
+      form.Form--capture(action='/render', name='capture-form')
         .Grid.Grid--spaced
           .Grid-cell
             .Form-field
               label URL
               .Form-inputs
-                input#in-url(type='text', name='url', placeholder='e.g. google.com', value=req.query.url)
+                input#in-url(type='text', name='url', placeholder='e.g. google.com', value=req.query.url, required)
 
           .Grid-cell.u-size1of2
             .Form-field.opt-custom
               label Width
               .Form-inputs
-                input(type='number', name='width', placeholder='Width', value="800")
+                input(type='number', name='width', placeholder='Width', value="800", required, min="200")
 
           .Grid-cell.u-size1of2
             .Form-field.opt-custom
               label Height
               .Form-inputs
-                input(type='number', name='height', placeholder='Height', value="800")
+                input(type='number', name='height', placeholder='Height', value="800", required, min="200")
 
           .Grid-cell
             .Form-field
